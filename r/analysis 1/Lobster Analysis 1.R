@@ -13,7 +13,7 @@ func1 <- function(x){
 dat %<>% group_by(rn=rownames(dat)) %>% mutate(scent=func1(c(A,B)))
 
 tmp <- data.frame(scent=unique(dat$scent))
- ## BLANK - still waiting M's input
+tmp$choice <- c(                  ) ## BLANK - still waiting M's input
 tmp$res <- 0
 
 dat$res <- tmp$res[match(paste(dat$scent,dat$choice),paste(tmp$scent,tmp$choice))] 
