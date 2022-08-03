@@ -2,7 +2,7 @@
 library(dplyr)
 library(magrittr)
 
-dat <- read.csv('Lobster first choice results.csv',stringsAsFactors = F)
+dat <- read.csv('Lobster First choice results.csv',stringsAsFactors = F)
 
 func1 <- function(x){
   x <- x[order(x)]
