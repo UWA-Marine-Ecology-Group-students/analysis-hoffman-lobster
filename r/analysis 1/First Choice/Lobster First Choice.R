@@ -3,6 +3,8 @@ library(dplyr)
 library(magrittr)
 
 dat <- read.csv('Lobster First choice results.csv',stringsAsFactors = F)
+## or
+dat <- read.csv('No mussels L first choice.csv',stringsAsFactors = F) #This csv file has no mussel scent data
 
 func1 <- function(x){
   x <- x[order(x)]
@@ -59,15 +61,15 @@ dout <- mod(out$par,flag='print')
 tmp1 <- tapply(dout$trial, list(dout$choice, dout$scent),length)
 tmp1 <- tmp1/colSums(tmp1,na.rm=TRUE) 
 
-tmp <- tapply(dout$res,list(dout$choice, dout$scent),mean)
+tmp <- tapply(dout$res, list(dout$choice, dout$scent),mean)
 tmp <- tmp/colSums(tmp,na.rm=TRUE) 
 par(mfrow=c(2,1),las=1,xpd=T, mar=c(5,5,4,2))
-Col <- c('red',grey(0.95),'orange','wheat')
+Col <- c('red', grey(0.95),'orange','wheat')
 barplot(tmp1,beside = T,col=Col,ylim=c(0,1),ylab='Proportion',main='Observed')
 legend('bottom',ncol=4,fill=Col,legend=(rownames(tmp)),inset = -0.45)
-barplot(tmp,beside = T,col=Col,ylim=c(0,1),ylab='Proportion',main='Estimated') 
-##  ^Estimated barplot not showing. tmp has all NA values.
+barplot(tmp,beside = T,col=Col,ylim=c(0,1),ylab='Proportion',main='Estimated')
 par(xpd=F)
+##  ^Estimated barplot not showing. tmp has all NA values.
 
 
 
