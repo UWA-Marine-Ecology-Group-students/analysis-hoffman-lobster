@@ -28,7 +28,7 @@ head(dat)
 
 scent <- c('Blank',  'Adult', 'Juvenile', 'Mix')
 
-pin   <- c('Bnk' = -3, 'Ad' = -0.7, 'Ju' = -3, 'Mx' = -1.5, 
+pin   <- c('B' = -3, 'A' = -0.7, 'J' = -3, 'M' = -1.5, 
            A2 = 0.02, A3 = 0.03, A4 = 0.04, A5 = 0.05, A6 = 0.06,
            B1 = 0.0001, B2 = 0.002, B3 = 0.003, B4 = 0.004, B5 = 0.005, B6 = 0.006) 
 # I'm not sure what this object is for but the values are presumably quite important.
