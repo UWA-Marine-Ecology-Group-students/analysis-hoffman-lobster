@@ -2,9 +2,7 @@
 library(dplyr)
 library(magrittr)
 
-dat <- read.csv('data/tidy/first_choice.csv',stringsAsFactors = F)
-## or
-# dat <- read.csv('data/tidy/no_mussels_l_first_choice.csv', stringsAsFactors = F) #This csv file has no mussel scent data
+dat <- read.csv('data/tidy/final_choice.csv',stringsAsFactors = F)
 
 func1 <- function(x){
   x <- x[order(x)]
@@ -253,21 +251,3 @@ par(xpd = F)
 
 
 # dev.off()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
